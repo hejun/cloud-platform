@@ -1,4 +1,4 @@
-package com.hejun.colud.common.constants;
+package pub.hejun.colud.common.constants;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

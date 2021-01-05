@@ -1,7 +1,7 @@
-package com.hejun.colud.common.vo;
+package pub.hejun.colud.common.vo;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.hejun.colud.common.constants.ResultCode;
+import pub.hejun.colud.common.constants.ResultCode;
 import lombok.Getter;
 
 import java.io.Serializable;
