@@ -17,11 +17,13 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>
+        <mybatis-plus.version>3.4.1</mybatis-plus.version>
     </properties>
 
     <modules>
         <module>common</module>
         <module>gateway</module>
+        <module>auth</module>
     </modules>
 
     <dependencies>
@@ -33,6 +35,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
