@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <parent>
+        <groupId>pub.hejun.cloud</groupId>
+        <artifactId>modules</artifactId>
+        <version>0.0.1</version>
+    </parent>
+
+    <artifactId>uac</artifactId>
+
+    <properties>
+        <cloud-uac-api.version>0.0.1</cloud-uac-api.version>
+    </properties>
+
+    <modules>
+        <module>uac-api</module>
+        <module>uac-impl</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>pub.hejun.cloud</groupId>
+                <artifactId>uac-api</artifactId>
+                <version>${cloud-uac-api.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

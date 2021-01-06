@@ -1,0 +1,39 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: uac
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        group: ${spring.profiles}
+        file-extension: yml
+        shared-configs[0]:
+          data-id: datasource.yml
+          group: ${spring.profiles}
+          refresh: true
+      discovery:
+        group: ${spring.profiles}
+---
+spring:
+  profiles: dev
+  cloud:
+    nacos:
+      config:
+        server-addr: https://nacos.hejun.pub
+      discovery:
+        server-addr: ${spring.cloud.nacos.config.server-addr}
+logging:
+  level:
+    root: info
+---
+spring:
+  profiles: prod
+  cloud:
+    nacos:
+      config:
+        server-addr: ${NACOS_HOST}:${NACOS_PORT}
+      discovery:
+        server-addr: ${spring.cloud.nacos.config.server-addr}
