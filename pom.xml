@@ -18,12 +18,14 @@
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>
         <mybatis-plus.version>3.4.1</mybatis-plus.version>
+        <cloud-common.version>0.0.1</cloud-common.version>
     </properties>
 
     <modules>
         <module>common</module>
         <module>gateway</module>
         <module>auth</module>
+        <module>modules</module>
     </modules>
 
     <dependencies>
@@ -39,6 +41,11 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>pub.hejun.cloud</groupId>
+                <artifactId>common</artifactId>
+                <version>${cloud-common.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
