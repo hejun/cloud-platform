@@ -9,6 +9,7 @@ spring:
     nacos:
       config:
         group: ${spring.profiles}
+        file-extension: yml
         shared-configs[0]:
           data-id: datasource.yml
           group: ${spring.profiles}

@@ -23,8 +23,8 @@ public class InitializeRouteConfiguration {
     @PostConstruct
     public void init() {
         FilterDefinition filter = new FilterDefinition("StripPrefix=1");
-        // Test
-        RouteDefinition testDefinition = new RouteDefinition("testId=https://www.baidu.com,Path=/test/**");
+        // Auth
+        RouteDefinition testDefinition = new RouteDefinition("authId=lb://auth,Path=/auth/**");
         testDefinition.getFilters().add(filter);
         routeDefinitionRepository.save(Mono.just(testDefinition)).subscribe();
     }
