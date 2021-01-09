@@ -1,6 +1,17 @@
 version: '3'
 
 services:
+  uac:
+    container_name: uac
+    image: cloud-platform/uac:0.0.1
+    build:
+      context: ./modules/uac/uac-impl
+    volumes:
+      - /hejun/log/uac:/cloud/log
+    env_file:
+      - cloud.env
+    networks:
+      - cloud_net
   auth:
     container_name: auth
     image: cloud-platform/auth:0.0.1
