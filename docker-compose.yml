@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  mysql_master:
+  mysql:
     container_name: mysql_master
     image: cloud-platform/mysql:5.7
     build:
@@ -15,7 +15,7 @@ services:
       - 3306:3306
     networks:
       - cloud_net
-  redis_master:
+  redis:
     container_name: redis_master
     image: redis:5.0
     restart: always
@@ -26,7 +26,7 @@ services:
       - 6379:6379
     networks:
       - cloud_net
-  nacos_master:
+  nacos:
     container_name: nacos_master
     image: cloud-platform/nacos-server:1.4.0
     build:

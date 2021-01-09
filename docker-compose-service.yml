@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  auth:
+    container_name: auth
+    image: cloud-platform/auth:0.0.1
+    build:
+      context: ./auth
+    volumes:
+      - /hejun/log/auth:/cloud/log
+    env_file:
+      - cloud.env
+    networks:
+      - cloud_net
+  gateway:
+    container_name: gateway
+    image: cloud-platform/gateway:0.0.1
+    build:
+      context: ./gateway
+    volumes:
+      - /hejun/log/gateway:/cloud/log
+    env_file:
+      - cloud.env
+    ports:
+      - 8080:8080
+    networks:
+      - cloud_net
