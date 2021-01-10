@@ -5,20 +5,23 @@ spring:
     name: uac
   profiles:
     active: dev
+  datasource:
+    platform: mysql
+    driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
     nacos:
       config:
         group: ${spring.profiles}
         file-extension: yml
-        shared-configs[0]:
-          data-id: datasource.yml
-          group: ${spring.profiles}
-          refresh: true
       discovery:
         group: ${spring.profiles}
 ---
 spring:
   profiles: dev
+  datasource:
+    url: jdbc:mysql://mysql.hejun.pub:3306/cloud_uac?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 1234
   cloud:
     nacos:
       config:
@@ -31,6 +34,10 @@ logging:
 ---
 spring:
   profiles: prod
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/cloud_uac?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
   cloud:
     nacos:
       config:

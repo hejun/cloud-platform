@@ -10,12 +10,11 @@ spring:
       config:
         group: ${spring.profiles}
         file-extension: yml
-        shared-configs[0]:
-          data-id: datasource.yml
-          group: ${spring.profiles}
-          refresh: true
       discovery:
         group: ${spring.profiles}
+auth:
+  jwt:
+    sign-key: ABCDEFGHIJKLMNOPQRSTUVWXYZ
 ---
 spring:
   profiles: dev
@@ -31,6 +30,8 @@ logging:
 ---
 spring:
   profiles: prod
+  redis:
+    host: ${REDIS_HOST}
   cloud:
     nacos:
       config:
