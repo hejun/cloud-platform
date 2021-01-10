@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 用户实体类
@@ -18,8 +19,8 @@ public class User implements Serializable {
 
     @TableId(type = IdType.AUTO)
     private Long id;
-
     private String username;
-
     private String password;
+    private Date createdDate;
+    private Date modifiedDate;
 }

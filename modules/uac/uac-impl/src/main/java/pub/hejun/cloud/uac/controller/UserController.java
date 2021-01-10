@@ -1,5 +1,6 @@
 package pub.hejun.cloud.uac.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,8 +22,8 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping
-    public Result<User> selectByUsername(@RequestParam(defaultValue = "1") Long current,
-                                         @RequestParam(defaultValue = "15") Long size) {
+    public Result<IPage<User>> selectByUsername(@RequestParam(defaultValue = "1") Long current,
+                                                @RequestParam(defaultValue = "15") Long size) {
         return Result.SUCCESS(userService.selectPage(current, size));
     }
 
