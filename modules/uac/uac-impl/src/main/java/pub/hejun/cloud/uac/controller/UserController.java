@@ -2,10 +2,7 @@ package pub.hejun.cloud.uac.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import pub.hejun.cloud.uac.entity.User;
 import pub.hejun.cloud.uac.service.UserService;
 import pub.hejun.colud.common.vo.Result;
@@ -15,6 +12,7 @@ import pub.hejun.colud.common.vo.Result;
  *
  * @author HeJun
  */
+@RestController
 @RequestMapping("/user")
 @RequiredArgsConstructor
 public class UserController {
