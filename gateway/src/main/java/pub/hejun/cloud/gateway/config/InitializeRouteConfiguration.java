@@ -24,8 +24,12 @@ public class InitializeRouteConfiguration {
     public void init() {
         FilterDefinition filter = new FilterDefinition("StripPrefix=1");
         // Auth
-        RouteDefinition testDefinition = new RouteDefinition("authId=lb://auth,Path=/auth/**");
-        testDefinition.getFilters().add(filter);
-        routeDefinitionRepository.save(Mono.just(testDefinition)).subscribe();
+        RouteDefinition authDefinition = new RouteDefinition("authId=lb://auth,Path=/auth/**");
+        authDefinition.getFilters().add(filter);
+        routeDefinitionRepository.save(Mono.just(authDefinition)).subscribe();
+        // Uac
+        RouteDefinition uacDefinition = new RouteDefinition("uacId=lb://uac,Path=/uac/**");
+        uacDefinition.getFilters().add(filter);
+        routeDefinitionRepository.save(Mono.just(uacDefinition)).subscribe();
     }
 }
