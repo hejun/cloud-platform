@@ -28,6 +28,9 @@ spring:
         server-addr: https://nacos.hejun.pub
       discovery:
         server-addr: ${spring.cloud.nacos.config.server-addr}
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 logging:
   level:
     root: info
