@@ -15,6 +15,13 @@ spring:
         file-extension: yml
       discovery:
         group: ${spring.profiles}
+  security:
+    oauth2:
+      resourceserver:
+        opaquetoken:
+          client-id: root
+          client-secret: 1234
+          introspection-uri: lb://auth/oauth/check_token
 ---
 spring:
   profiles: dev
