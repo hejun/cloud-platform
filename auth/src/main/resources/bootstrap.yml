@@ -18,6 +18,9 @@ auth:
 ---
 spring:
   profiles: dev
+  redis:
+    host: redis.hejun.pub
+    password: 1234
   cloud:
     nacos:
       config:
