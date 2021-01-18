@@ -13,6 +13,7 @@ import lombok.Getter;
 public enum ResultCode {
 
     OK(200, "成功"),
+    INTERNAL_SERVER_ERROR(500, "服务器异常"),
     ;
     private Integer code;
     private String desc;

@@ -26,6 +26,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     private final AuthenticationManager authenticationManager;
     private final JwtAccessTokenConverter jwtAccessTokenConverter;
     private final RedisTokenStore redisTokenStore;
+    private final CustomExceptionTranslator customExceptionTranslator;
 
     private final ClientDetailsServiceImpl clientDetailsServiceImpl;
     private final UserDetailsServiceImpl userDetailsServiceImpl;
@@ -47,6 +48,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
                 .authenticationManager(authenticationManager)
                 .userDetailsService(userDetailsServiceImpl)
                 .accessTokenConverter(jwtAccessTokenConverter)
+                .exceptionTranslator(customExceptionTranslator)
                 .reuseRefreshTokens(false)
                 .tokenStore(redisTokenStore);
     }
