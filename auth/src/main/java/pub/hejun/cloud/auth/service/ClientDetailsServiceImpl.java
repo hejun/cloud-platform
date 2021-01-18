@@ -29,8 +29,8 @@ public class ClientDetailsServiceImpl implements ClientDetailsService {
         clientDetails.setClientId(clientId);
         clientDetails.setClientSecret(passwordEncoder.encode("1234"));
         clientDetails.setAuthorizedGrantTypes(Arrays.asList("authorization_code,password,refresh_token".split(",")));
-        clientDetails.setAccessTokenValiditySeconds(120);
-        clientDetails.setRefreshTokenValiditySeconds(240);
+        clientDetails.setAccessTokenValiditySeconds(1800);
+        clientDetails.setRefreshTokenValiditySeconds(3600);
         clientDetails.setRegisteredRedirectUri(Collections.emptySet());
         clientDetails.setScope(Arrays.asList("READ,WRITE".split(",")));
         clientDetails.setAutoApproveScopes(clientDetails.getScope());
