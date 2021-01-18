@@ -6,6 +6,14 @@ spring:
   profiles:
     active: dev
   cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: '*'
+            allowedMethods: '*'
+            allowedHeaders: '*'
+            maxAge: 3600
     nacos:
       config:
         group: ${spring.profiles}
