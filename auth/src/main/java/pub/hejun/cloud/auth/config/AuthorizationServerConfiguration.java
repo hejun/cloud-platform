@@ -9,7 +9,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.error.WebResponseExceptionTranslator;
-import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 import pub.hejun.cloud.auth.service.ClientDetailsServiceImpl;
 import pub.hejun.cloud.auth.service.UserDetailsServiceImpl;
@@ -25,7 +24,6 @@ import pub.hejun.cloud.auth.service.UserDetailsServiceImpl;
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
 
     private final AuthenticationManager authenticationManager;
-    private final JwtAccessTokenConverter jwtAccessTokenConverter;
     private final RedisTokenStore redisTokenStore;
     private final WebResponseExceptionTranslator webResponseExceptionTranslator;
 
@@ -48,7 +46,6 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         endpoints
                 .authenticationManager(authenticationManager)
                 .userDetailsService(userDetailsServiceImpl)
-                .accessTokenConverter(jwtAccessTokenConverter)
                 .exceptionTranslator(webResponseExceptionTranslator)
                 .reuseRefreshTokens(false)
                 .tokenStore(redisTokenStore);
