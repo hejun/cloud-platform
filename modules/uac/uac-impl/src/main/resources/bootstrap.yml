@@ -25,14 +25,14 @@ spring:
 ---
 spring:
   profiles: dev
-  datasource:
-    url: jdbc:mysql://mysql.hejun.pub:3306/cloud_uac?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
-    username: root
-    password: 1234
   cloud:
     nacos:
       config:
         server-addr: https://nacos.hejun.pub
+        shared-configs[0]:
+          data-id: data-source.yml
+          group: dev
+          refresh: true
       discovery:
         server-addr: ${spring.cloud.nacos.config.server-addr}
 mybatis-plus:
