@@ -20,6 +20,7 @@
     </properties>
 
     <modules>
+        <module>common</module>
     </modules>
 
     <dependencies>
