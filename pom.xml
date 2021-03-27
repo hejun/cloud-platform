@@ -20,7 +20,7 @@
     </properties>
 
     <modules>
-        <module>common</module>
+        <module>cloud-platform-commons</module>
     </modules>
 
     <dependencies>
