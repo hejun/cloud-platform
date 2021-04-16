@@ -11,10 +11,6 @@
 
     <artifactId>cloud-platform-starter-mybatis</artifactId>
 
-    <properties>
-        <mybatis-plus.version>3.4.2</mybatis-plus.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>mysql</groupId>
