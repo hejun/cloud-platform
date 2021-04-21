@@ -34,7 +34,7 @@ public @interface DistributedLock {
      *
      * @return
      */
-    long expire() default 3000L;
+    long expire() default 30000L;
 
     /**
      * 过期时间单位
