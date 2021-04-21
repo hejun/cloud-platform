@@ -85,6 +85,6 @@ public class SimpleLock implements Lock {
                 }
             }
         };
-        timer.newTimeout(timerTask, expireTime - 500, TimeUnit.MILLISECONDS);
+        timer.newTimeout(timerTask, expireTime - 1000, TimeUnit.MILLISECONDS);
     }
 }
