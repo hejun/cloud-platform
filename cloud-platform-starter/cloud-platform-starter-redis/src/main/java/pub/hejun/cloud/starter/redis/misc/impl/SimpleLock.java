@@ -31,8 +31,7 @@ public class SimpleLock implements Lock {
     private final Map<String, Boolean> currentStatusMap = new ConcurrentHashMap<>(1);
 
     private final RedisScript<Integer> lockScript = new DefaultRedisScript<>(
-            "if(redis.call('exists', KEYS[1]) == 0) then " +
-                    "redis.call('SET', KEYS[1], ARGV[1], 'NX', 'PX', ARGV[2]);" +
+            "if(redis.call('SET', KEYS[1], ARGV[1], 'NX', 'PX', ARGV[2])) then " +
                     "return '1';" +
                     "else " +
                     "return '0';" +
