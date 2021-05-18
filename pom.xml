@@ -23,7 +23,7 @@
 
     <modules>
         <module>cloud-platform-commons</module>
-        <module>cloud-platform-starter</module>
+        <module>cloud-platform-starters</module>
         <module>cloud-platform-gateway</module>
     </modules>
 
